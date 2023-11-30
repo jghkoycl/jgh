@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="post">
+        <h1>{{ post.title }}</h1>
+        <p>发布者: {{ post.user.username }}</p>
+        <p>{{ post.content }}</p>
+    </div>
+
+    <h2>评论</h2>
+    {% for comment in comments %}
+        <div class="comment">
+            <p>{{ comment.content }}</p>
+            <p>评论者: {{ comment.user.username }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>
